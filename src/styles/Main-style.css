@@ -1,0 +1,148 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Quicksand, sans-serif;
+}
+
+body {
+    height: 100vh;
+    background: linear-gradient(225deg, rgba(7, 0, 22, 1) 0%, rgba(13, 0, 41, 1) 11%, rgba(0, 0, 0, 1) 100%);
+    overflow: hidden;
+}
+
+container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 90vh;
+    gap: 30px;
+}
+
+.title {
+    color: white;
+    font-size: 25px;
+    font-weight: 500;
+}
+
+.treino-btn {
+    text-decoration: none;
+    color: white;
+    background-color: rgba(53, 0, 139, 0.3);
+    border: 1px solid rgba(53, 0, 139, 0.4);
+    box-shadow: inset 0px -20px 60px 1px rgba(0, 0, 0, 0.137);
+    height: 200px;
+    width: 130px;
+    border-radius: 15px;
+    cursor: pointer;
+    font-size: 25px;
+    transition: box-shadow 0.3s;
+
+    &:hover {
+        box-shadow: 0 0 20px 8px rgba(81, 0, 128, 0.3);
+    }
+}
+
+.buttons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+}
+
+.AB-btn {
+    font-size: 60px;
+}
+
+.treino-btn p {
+    text-shadow: 0 0 10px rgb(0, 0, 0);
+}
+
+nav {
+    height: 6vh;
+    display: flex;
+    align-items: center;
+}
+
+.slider-container {
+    display: flex;
+    align-items: center;
+}
+
+.slider {
+    background-color: rgb(22, 22, 22);
+    width: 200px;
+    height: 170px;
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    left: -220px;
+    /* Escondido inicialmente */
+    top: 16px;
+    transition: left 0.3s ease-in-out;
+    /* Suavidade na animação */
+}
+
+.slider ul {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    list-style: none;
+}
+
+.slider li {
+    color: white;
+    font-weight: 600;
+    font-size: 16px;
+    padding: 6px 10px;
+    border-radius: 10px;
+
+    &:hover {
+        background-color: rgb(135, 43, 221);
+    }
+}
+
+.timeCalisthenics{
+    border: 1px solid rgba(255, 255, 255, 0.603);
+    padding: 6px 8px;
+    border-radius: 10px;
+
+    & h1{
+        font-size: 14px;
+    }
+
+    & p{
+        font-size: 10px;
+    }
+}
+
+.slider a {
+    text-decoration: none;
+    color: white;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.slider.show {
+    left: 12px;
+    /* Posição visível */
+}
+
+.slider.treino{
+    height: 210px;
+}
+
+.burguer-menu {
+    position: absolute;
+    left: 0;
+    /* Inicialmente junto à borda esquerda */
+    top: 10px;
+    transition: left 0.3s ease-in-out;
+    /* Movimenta junto com o slider */
+}

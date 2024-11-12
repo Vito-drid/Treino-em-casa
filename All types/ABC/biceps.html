@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>B</title>
+    <link rel="shortcut icon" href="../../src/img/dumbbell.svg" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    
+    <link rel="stylesheet" href="../../src/styles/style.css">
+    <link rel="shortcut icon" href="../../src/img/dumbbell.svg" type="image/x-icon">
+</head>
+
+<body>
+    <nav>
+        <div class="slider-container">
+            <div class="slider">
+                <ul>
+                    <li>
+                        <a href="../../Main-index.html"><i class="fa-solid fa-house"></i>Voltar
+                            ao início</a>
+                    </li>
+                    <li>
+                        <a href="ABCindex.html"><i
+                                class="fa-solid fa-arrow-left"></i>Voltar</a></li>
+                    <li>
+                        <div class="timeCalisthenics" onload="calcularTempo()">
+                            <h1>Inicio: 6 de fevereiro de 2023</h1>
+                            <p id="tempo"></p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="burguer-menu">
+                <button onclick="this.querySelector('span').classList.toggle('is-closed'); toggleSlider();"
+                    class="burguer-button">
+                    <span class="burger-2">
+                        <span class="bar bar--1"></span>
+                        <span class="bar bar--2"></span>
+                        <span class="bar bar--3"></span>
+                    </span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <div id="timer">00:00:00.00</div>
+        <div class="container">
+            <div class="task-list">
+                <div class="checkbox-group" id="task20">
+                    <h2>Barra supinada4xMax</h2>
+                    <label><input type="checkbox" disabled> 1</label>
+                    <label><input type="checkbox" disabled> 2</label>
+                    <label><input type="checkbox" disabled> 3</label>
+                    <label><input type="checkbox" disabled> 4</label>
+                </div>
+                <div class="checkbox-group" id="task21">
+                    <h2>Barra aberta 4xMax</h2>
+                    <label><input type="checkbox" disabled> 1</label>
+                    <label><input type="checkbox" disabled> 2</label>
+                    <label><input type="checkbox" disabled> 3</label>
+                    <label><input type="checkbox" disabled> 4</label>
+                </div>
+                <div class="checkbox-group" id="task22">
+                    <h2>Barra alternada4xMax</h2>
+                    <label><input type="checkbox" disabled> 1</label>
+                    <label><input type="checkbox" disabled> 2</label>
+                    <label><input type="checkbox" disabled> 3</label>
+                    <label><input type="checkbox" disabled> 4</label>
+                </div>
+                <div class="checkbox-group" id="task23">
+                    <h2>Levanta peito 4xMax</h2>
+                    <label><input type="checkbox" disabled> 1</label>
+                    <label><input type="checkbox" disabled> 2</label>
+                    <label><input type="checkbox" disabled> 3</label>
+                    <label><input type="checkbox" disabled> 4</label>
+                </div>
+                <div class="checkbox-group" id="task24">
+                    <h2>Apoia braço 4xMax</h2>
+                    <label><input type="checkbox" disabled> 1</label>
+                    <label><input type="checkbox" disabled> 2</label>
+                    <label><input type="checkbox" disabled> 3</label>
+                    <label><input type="checkbox" disabled> 4</label>
+                </div>
+                <div class="checkbox-group" id="task25">
+                    <h2>Normal 4xMax</h2>
+                    <label><input type="checkbox" disabled> 1</label>
+                    <label><input type="checkbox" disabled> 2</label>
+                    <label><input type="checkbox" disabled> 3</label>
+                    <label><input type="checkbox" disabled> 4</label>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/luxon@3.0.1/build/global/luxon.min.js"></script>
+    <script src="../../src/scripts/vanilla-tilt.js"></script>
+    <script src="../../src/scripts/script.js"></script>
+    <script>
+        VanillaTilt.init(document.querySelectorAll(".card"), {
+            max: 18,
+            sped: 400,
+            reverse: true,
+            scale: 1.1,
+        });
+
+        document.addEventListener("DOMContentLoaded", function () {
+            // Função para calcular o tempo desde 6 de fevereiro de 2023
+            function calcularTempo() {
+                const DateTime = luxon.DateTime;
+                const Interval = luxon.Interval;
+
+                const dataInicio = DateTime.local(2023, 2, 6); // Data de início
+                const dataAtual = DateTime.now(); // Data atual
+
+                const intervalo = Interval.fromDateTimes(dataInicio, dataAtual);
+                const duracao = intervalo.toDuration(['years', 'months', 'weeks', 'days']);
+
+                // Cálculo de anos, meses, semanas e dias
+                const anos = Math.floor(duracao.years);
+                const meses = Math.floor(duracao.months);
+                const semanas = Math.floor(duracao.days / 7);
+                const dias = Math.floor(duracao.days % 7);
+
+                document.getElementById("tempo").textContent = `${anos} anos, ${meses} meses, ${semanas} semanas e ${dias} dias`;
+            }
+
+            calcularTempo(); // Executa a função para atualizar o elemento "tempo"
+        });
+    </script>
+</body>
+
+</html>

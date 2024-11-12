@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="../../src/styles/style.css">
+    <link rel="shortcut icon" href="../../src/img/dumbbell.svg" type="image/x-icon">
+    <title>ABC</title>
+</head>
+
+<body>
+    <nav>
+        <div class="slider-container">
+            <div class="slider">
+                <ul>
+                    <li>
+                        <a href="../../Main-index.html"><i class="fa-solid fa-house"></i>Voltar
+                            ao início</a>
+                    </li>
+                    <li>
+                        <a href="../../Main-index.html"><i
+                                class="fa-solid fa-arrow-left"></i>Voltar</a></li>
+                    <li>
+                        <div class="timeCalisthenics" onload="calcularTempo()">
+                            <h1>Inicio: 6 de fevereiro de 2023</h1>
+                            <p id="tempo"></p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="burguer-menu">
+                <button onclick="this.querySelector('span').classList.toggle('is-closed'); toggleSlider();"
+                    class="burguer-button">
+                    <span class="burger-2">
+                        <span class="bar bar--1"></span>
+                        <span class="bar bar--2"></span>
+                        <span class="bar bar--3"></span>
+                    </span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <container>
+        <div class="buttons">
+            <a class="treino-link" href="flexão.html">
+                <button class="treino-btn card AB-btn">
+                    <p>A</p>
+                </button>
+            </a>
+
+            <a class="treino-link" href="biceps.html">
+                <button class="treino-btn card AB-btn">
+                    <p>B</p>
+                </button>
+            </a>
+
+            <a class="treino-link" href="abdomen.html">
+                <button class="treino-btn card AB-btn">
+                    <p>C</p>
+                </button>
+            </a>
+        </div>
+    </container>
+
+    <script src="https://cdn.jsdelivr.net/npm/luxon@3.0.1/build/global/luxon.min.js"></script>
+    <script src="../../src/scripts/vanilla-tilt.js"></script>
+    <script src="../../src/scripts/script.js"></script>
+    <script>
+        VanillaTilt.init(document.querySelectorAll(".card"), {
+            max: 25,
+            sped: 400,
+            reverse: true,
+            scale: 1.16,
+            glare: true,
+            "max-glare": 0.2,
+        });
+
+        document.addEventListener("DOMContentLoaded", function () {
+            // Função para calcular o tempo desde 6 de fevereiro de 2023
+            function calcularTempo() {
+                const DateTime = luxon.DateTime;
+                const Interval = luxon.Interval;
+
+                const dataInicio = DateTime.local(2023, 2, 6); // Data de início
+                const dataAtual = DateTime.now(); // Data atual
+
+                const intervalo = Interval.fromDateTimes(dataInicio, dataAtual);
+                const duracao = intervalo.toDuration(['years', 'months', 'weeks', 'days']);
+
+                // Cálculo de anos, meses, semanas e dias
+                const anos = Math.floor(duracao.years);
+                const meses = Math.floor(duracao.months);
+                const semanas = Math.floor(duracao.days / 7);
+                const dias = Math.floor(duracao.days % 7);
+
+                document.getElementById("tempo").textContent = `${anos} anos, ${meses} meses, ${semanas} semanas e ${dias} dias`;
+            }
+
+            calcularTempo(); // Executa a função para atualizar o elemento "tempo"
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,34 @@
+.edit-btn-main {
+    background-color: transparent;
+    border: 1px solid transparent;
+    padding: 1px 10px;
+    cursor: pointer;
+    color: white;
+}
+
+.edit-btn-main.active {
+    color: rgb(135, 43, 221);
+}
+
+.all-btn-edit {
+    display: none;
+}
+
+.edit-btns{
+    display: flex;
+    gap: 10px;
+}
+
+.all-btn-edit{
+    background-color: rgb(135, 43, 221);
+    border: 1px solid transparent;
+    padding: 1px 10px;
+    cursor: pointer;
+    color: white;
+    border-radius: 20px;
+    margin: 10px 0;
+
+    &:hover{
+        background-color: rgb(106, 27, 180);
+    }
+}

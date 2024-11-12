@@ -1,0 +1,105 @@
+@import url('burguer-btn.css');
+@import url('Main-style.css');
+@import url('edit-btns.css');
+
+body {
+    background: linear-gradient(225deg, rgba(7, 0, 22, 1) 0%, rgba(13, 0, 41, 1) 11%, rgba(0, 0, 0, 1) 100%);
+    color: white;
+    font-family: 'Quicksand', sans-serif;
+    overflow: hidden;
+
+}
+
+main {
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 90vh;
+}
+
+#timer {
+    font-size: 3em;
+    text-align: center;
+    margin-bottom: 10px;
+    margin-top: 20px;
+    width: 100%;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    max-width: 1000px;
+    width: 100%;
+}
+
+.task-list {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.checkbox-group {
+    background: linear-gradient(225deg, rgba(11, 0, 33, 0.3) 0%, rgba(11, 0, 33, 0.3) 45%, rgba(20, 0, 62, 0.3) 89%, rgba(11, 0, 33, 0.3) 100%);
+    margin: 10px 10px;
+    font-size: 0.6em;
+
+    border-top: 1px solid rgba(113, 2, 187, 0.562);
+    border-left: 1px solid rgba(59, 2, 97, 0.562);
+    border-bottom: 1px solid rgba(59, 2, 97, 0.562);
+    border-right: 1px solid rgba(59, 2, 97, 0.562);
+
+    padding: 10px;
+    border-radius: 10px;
+    transition: .2s ease-in;
+
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+
+    &:hover {
+        box-shadow: 0 3px 12px 0px rgba(113, 2, 187, 0.3);
+        transform: scale(1.03);
+        transition: .2s ease-out;
+    }
+}
+
+.checkbox-group h2 {
+    margin-top: 0;
+    font-size: 1em;
+    /* Restaura o tamanho da fonte do título */
+}
+
+.checkbox-group label {
+    display: block;
+    font-size: 1em;
+    /* Tamanho da fonte do texto das checkboxes */
+}
+
+.checkbox-group label input {
+    margin-right: 5px;
+    width: 20px; /* Aumentei o tamanho para melhor visualização */
+    height: 20px;
+    appearance: none; /* Remove a aparência padrão */
+    background-color: transparent; /* Cor de fundo transparente */
+    border: 2px solid rgb(113, 2, 187); /* Borda roxa */
+    border-radius: 5px;
+    cursor: pointer; /* Muda o cursor para indicar que é clicável */
+}
+
+.checkbox-group label input:checked {
+    background-color: rgb(113, 2, 187); /* Cor de fundo roxa quando marcada */
+}
+
+/* Adicionando um estilo para o estado de foco */
+.checkbox-group label input:focus {
+    outline: none; /* Remove o contorno de foco padrão */
+    box-shadow: 0 0 5px rgb(113, 2, 187); /* Adiciona um efeito de sombra ao focar */
+}
+
+.checkbox-group hr {
+    margin: 10px 0;
+}
