@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="../../src/styles/global.css">
+    <link rel="shortcut icon" href="../../src/source/dumbell.svg" type="image/x-icon">
+    <title>A</title>
+</head>
+
+<body>
+    <video autoplay loop muted playsinline id="background-video">
+        <source src="../../src/source/blackhole.webm" type="video/mp4">
+        Não foi possivel carregar o video
+    </video>
+
+    <nav>
+        <div class="nav-list-container">
+            <div class="logo-container" onclick="window.location.reload();">
+                <i class="fa-solid fa-dumbbell"></i>
+                <p>calisthenics</p>
+            </div>
+
+            <ul class="nav-list">
+                <li class="nav-list-item"><a class="nav-btn" href="1ABC.html"><i class="fa-solid fa-left-long"></i></a>
+                </li>
+
+                <li class="nav-list-item"><a class="nav-btn" href="../../index.html"><i class="fa-solid fa-house"></i></a></li>
+
+                <li class="nav-list-item">
+                    <div class="burguer-menu">
+                        <button onclick="this.querySelector('span').classList.toggle('is-closed'); toggleSlider();"
+                            class="burguer-button">
+                            <span class="burger-2">
+                                <span class="bar bar--1"></span>
+                                <span class="bar bar--2"></span>
+                                <span class="bar bar--3"></span>
+                            </span>
+                        </button>
+                    </div>
+                    <div class="slider" style="display: none;">
+                        <ul class="slider-list">
+                            <li class="slider-slist-item">
+                                <button class="edit-btn-main"><i class="fa-regular fa-pen-to-square"></i>Editar</button>
+                            </li>
+                            <li class="slider-slist-item">
+                                <a class="slider-nav-list-link"
+                                    href="https://www.linkedin.com/in/victor-barros-6a2191282/" target="_blank"><i
+                                        class="fa-brands fa-linkedin"></i>Linkedin</a>
+                            </li>
+                            <li class="slider-slist-item">
+                                <a class="slider-nav-list-link" href="https://github.com/Vito-drid" target="_blank"><i
+                                        class="fa-brands fa-github"></i>GitHub</a>
+                            </li>
+
+                            <li class="slider-list-time slider-slist-item">
+                                <i class="fa-regular fa-calendar"></i>
+
+                                <div class="timeCalisthenics" onload="calcularTempo()">
+                                    <h1>Inicio: 6 de fevereiro de 2023</h1>
+                                    <p id="tempo"></p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+            <p class="Victor-name" style="color: white;">&lt;Victor2024/&gt;</p>
+        </div>
+    </nav>
+    
+    <main class="exercises">
+        <div id="timer">00:00:00.00</div>
+        <button class="next-serie-btn">Próxima Série</button>
+        <div class="container">
+            <div class="task-list">
+                <div class="checkbox-group" id="task26">
+                    <h2>Flexão comum (4xMax)</h2>
+                    <div id="checkboxes">
+                        <label><input type="checkbox" disabled> 1</label>
+                        <label><input type="checkbox" disabled> 2</label>
+                        <label><input type="checkbox" disabled> 3</label>
+                        <label><input type="checkbox" disabled> 4</label>
+                        <label><input type="checkbox" disabled> 5</label>
+                        <label><input type="checkbox" disabled> 6</label>
+                    </div>
+                    <div class="edit-btns">
+                        <button class="all-btn-edit" style="display:none;"
+                            onclick="editExercise('task26', 'Flexão comum (4xMax)')"><i class="fa-solid fa-pen"></i>
+                        </button>
+                        <button class="all-btn-edit" style="display: none;" onclick="editSeries('task26')">Editar
+                            séries</button>
+                        <button class="all-btn-edit" style="display:none;"
+                            onclick="resetExercise('task26', 'Flexão comum (4xMax)')"><i class="fa-solid fa-arrow-rotate-left"></i>
+                        </button>
+                    </div>
+                    <p class="taskId-edit" style="display: none;">Id: task26</p>
+                </div>
+
+                <div class="checkbox-group" id="task27">
+                    <h2>Avançada (4xMax)</h2>
+                    <div id="checkboxes">
+                        <label><input type="checkbox" disabled> 1</label>
+                        <label><input type="checkbox" disabled> 2</label>
+                        <label><input type="checkbox" disabled> 3</label>
+                        <label><input type="checkbox" disabled> 4</label>
+                        <label><input type="checkbox" disabled> 5</label>
+                        <label><input type="checkbox" disabled> 6</label>
+                    </div>
+                    <div class="edit-btns">
+                        <button class="all-btn-edit" style="display:none;"
+                            onclick="editExercise('task27', 'Avançada (4xMax)')"><i class="fa-solid fa-pen"></i>
+                        </button>
+                        <button class="all-btn-edit" style="display: none;" onclick="editSeries('task27')">Editar
+                            séries</button>
+                        <button class="all-btn-edit" style="display:none;"
+                            onclick="resetExercise('task27', 'Avançada (4xMax)')"><i class="fa-solid fa-arrow-rotate-left"></i>
+                        </button>
+                    </div>
+                    <p class="taskId-edit" style="display: none;">Id: task27</p>
+                </div>
+
+                <div class="checkbox-group" id="task28">
+                    <h2>Flexão unilateral (4xMax)</h2>
+                    <div id="checkboxes">
+                        <label><input type="checkbox" disabled> 1</label>
+                        <label><input type="checkbox" disabled> 2</label>
+                        <label><input type="checkbox" disabled> 3</label>
+                        <label><input type="checkbox" disabled> 4</label>
+                        <label><input type="checkbox" disabled> 5</label>
+                        <label><input type="checkbox" disabled> 6</label>
+                    </div>
+                    <div class="edit-btns">
+                        <button class="all-btn-edit" style="display:none;"
+                            onclick="editExercise('task28', 'Flexão unilateral (4xMax)')"><i class="fa-solid fa-pen"></i>
+                        </button>
+                        <button class="all-btn-edit" style="display: none;" onclick="editSeries('task28')">Editar
+                            séries</button>
+                        <button class="all-btn-edit" style="display:none;"
+                            onclick="resetExercise('task28', 'Flexão unilateral (4xMax)')"><i class="fa-solid fa-arrow-rotate-left"></i>
+                        </button>
+                    </div>
+                    <p class="taskId-edit" style="display: none;">Id: task28</p>
+                </div>
+
+                <div class="checkbox-group" id="task29">
+                    <h2>Pike (com cadeira ~45cm) (4xMax)</h2>
+                    <div id="checkboxes">
+                        <label><input type="checkbox" disabled> 1</label>
+                        <label><input type="checkbox" disabled> 2</label>
+                        <label><input type="checkbox" disabled> 3</label>
+                        <label><input type="checkbox" disabled> 4</label>
+                        <label><input type="checkbox" disabled> 5</label>
+                        <label><input type="checkbox" disabled> 6</label>
+                    </div>
+                    <div class="edit-btns">
+                        <button class="all-btn-edit" style="display:none;"
+                            onclick="editExercise('task29', 'Pike (com cadeira ~45cm) (4xMax)')"><i class="fa-solid fa-pen"></i>
+                        </button>
+                        <button class="all-btn-edit" style="display: none;" onclick="editSeries('task29')">Editar
+                            séries</button>
+                        <button class="all-btn-edit" style="display:none;"
+                            onclick="resetExercise('task29', 'Pike (com cadeira ~45cm) (4xMax)')"><i class="fa-solid fa-arrow-rotate-left"></i>
+                        </button>
+                    </div>
+                    <p class="taskId-edit" style="display: none;">Id: task29</p>
+                </div>
+
+                <div class="checkbox-group" id="task30">
+                    <h2>Aberta (4xMax)</h2>
+                    <div id="checkboxes">
+                        <label><input type="checkbox" disabled> 1</label>
+                        <label><input type="checkbox" disabled> 2</label>
+                        <label><input type="checkbox" disabled> 3</label>
+                        <label><input type="checkbox" disabled> 4</label>
+                        <label><input type="checkbox" disabled> 5</label>
+                        <label><input type="checkbox" disabled> 6</label>
+                    </div>
+                    <div class="edit-btns">
+                        <button class="all-btn-edit" style="display:none;"
+                            onclick="editExercise('task30', 'Aberta (4xMax)')"><i class="fa-solid fa-pen"></i>
+                        </button>
+                        <button class="all-btn-edit" style="display: none;" onclick="editSeries('task30')">Editar
+                            séries</button>
+                        <button class="all-btn-edit" style="display:none;"
+                            onclick="resetExercise('task30', 'Aberta (4xMax)')"><i class="fa-solid fa-arrow-rotate-left"></i>
+                        </button>
+                    </div>
+                    <p class="taskId-edit" style="display: none;">Id: task30</p>
+                </div>
+
+                <div class="checkbox-group" id="task31">
+                    <h2>Arqueiro (4xMax)</h2>
+                    <div id="checkboxes">
+                        <label><input type="checkbox" disabled> 1</label>
+                        <label><input type="checkbox" disabled> 2</label>
+                        <label><input type="checkbox" disabled> 3</label>
+                        <label><input type="checkbox" disabled> 4</label>
+                        <label><input type="checkbox" disabled> 5</label>
+                        <label><input type="checkbox" disabled> 6</label>
+                    </div>
+                    <div class="edit-btns">
+                        <button class="all-btn-edit" style="display:none;"
+                            onclick="editExercise('task31', 'Arqueiro (4xMax)')"><i class="fa-solid fa-pen"></i>
+                        </button>
+                        <button class="all-btn-edit" style="display: none;" onclick="editSeries('task31')">Editar
+                            séries</button>
+                        <button class="all-btn-edit" style="display:none;"
+                            onclick="resetExercise('task31', 'Arqueiro (4xMax)')"><i class="fa-solid fa-arrow-rotate-left"></i>
+                        </button>
+                    </div>
+                    <p class="taskId-edit" style="display: none;">Id: task31</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="../../src/scripts/script.js"></script>
+    <script src="../../src/scripts/vanilla-tilt.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/luxon@3.0.1/build/global/luxon.min.js"></script>
+    <script>
+        VanillaTilt.init(document.querySelectorAll(".card"), {
+            max: 25,
+            sped: 400,
+            reverse: true,
+            scale: 1.1,
+            glare: true,
+            "max-glare": 0.2,
+        });
+
+        document.addEventListener("DOMContentLoaded", function () {
+            function calcularTempo() {
+                const DateTime = luxon.DateTime;
+
+                const dataInicio = DateTime.local(2023, 2, 6);
+                const dataAtual = DateTime.now();
+
+                const diff = dataAtual.diff(dataInicio, ['years', 'months', 'days']).toObject();
+
+                const anos = Math.floor(diff.years);
+                const meses = Math.floor(diff.months);
+                const diasTotaisRestantes = Math.floor(diff.days);
+
+                const semanas = Math.floor(diasTotaisRestantes / 7);
+                const dias = diasTotaisRestantes % 7;
+
+                document.getElementById("tempo").textContent = `${anos} anos, ${meses} meses, ${semanas} semanas e ${dias} dias`;
+            }
+
+            calcularTempo();
+        });
+    </script>
+</body>
+
+</html>

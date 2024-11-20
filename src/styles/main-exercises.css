@@ -1,0 +1,162 @@
+.edit-btn-main {
+    background-color: transparent;
+    color: white;
+    font-size: 18px;
+    font-weight: 500;
+    border: 1px solid transparent;
+    display: flex;
+    gap: 8px;
+    margin: 5px 0 2px 0;
+    cursor: pointer;
+}
+
+.exercises {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    justify-content: start;
+    margin-top: 30px;
+}
+
+#timer {
+    color: var(--white);
+    font-size: 40px;
+    background: var(--card-shadow2);
+    padding: 0.3em 0.8em;
+    border-radius: 40px;
+}
+
+.task-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    gap: 30px;
+}
+
+.checkbox-group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background: var(--purple-gradient);
+    width: 90%;
+    padding: 1em;
+    border-radius: 20px;
+    border-top: 1px solid var(--purple3);
+    border-left: 1px solid var(--purple4);
+    border-right: 1px solid var(--purple4);
+    border-bottom: 1px solid var(--purple5);
+
+    & label {
+        color: var(--white);
+        font-weight: 500;
+    }
+
+    & h2 {
+        color: var(--white);
+    }
+}
+
+#checkboxes {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.checkbox-group label {
+    display: block;
+    font-size: 1em;
+    color: var(--white);
+    /* Tamanho da fonte do texto das checkboxes */
+}
+
+.checkbox-group label input {
+    margin-right: 5px;
+    width: 16px;
+    /* Aumentei o tamanho para melhor visualização */
+    height: 16px;
+    appearance: none;
+    /* Remove a aparência padrão */
+    background-color: transparent;
+    /* Cor de fundo transparente */
+    border: 2px solid rgb(113, 2, 187);
+    /* Borda roxa */
+    border-radius: 7px;
+    cursor: pointer;
+    /* Muda o cursor para indicar que é clicável */
+}
+
+.checkbox-group label input:checked {
+    background-color: rgb(113, 2, 187);
+    /* Cor de fundo roxa quando marcada */
+}
+
+/* Adicionando um estilo para o estado de foco */
+.checkbox-group label input:focus {
+    outline: none;
+    /* Remove o contorno de foco padrão */
+    box-shadow: 0 0 5px rgb(113, 2, 187);
+    /* Adiciona um efeito de sombra ao focar */
+}
+
+.edit-btns {
+    display: flex;
+    gap: 10px;
+    margin: 8px 0;
+}
+
+.all-btn-edit {
+    color: var(--white);
+    font-size: 18px;
+    padding: 8px;
+    border: 1px solid rgb(48, 1, 92);
+    cursor: pointer;
+    border-radius: 10px;
+    background: transparent;
+}
+
+.taskId-edit {
+    color: var(--white);
+}
+
+.next-serie-btn {
+    display: block;
+    background: var(--purple3);
+    color: var(--white);
+    padding: 5px 15px;
+    border-radius: 20px;
+    border: 2px solid transparent;
+
+    &:active {
+        background: var(--purple4);
+        border: 2px solid var(--purple3);
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .task-list {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        width: 90vw;
+        gap: 20px;
+    }
+
+    .checkbox-group{
+        height: 100%;
+    }
+
+    .exercises {
+        height: 90%;
+    }
+
+    body{
+        overflow-x: hidden;
+    }
+
+    .next-serie-btn{
+        display: none;
+    }
+}

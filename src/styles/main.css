@@ -1,0 +1,82 @@
+main{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+}
+
+.main-title{
+    color: var(--white);
+    font-size: 20px;
+}
+
+.card{
+    height: 150px;
+    width: 100px;
+    border-radius: 15px;
+    font-size: 18px;
+    color: var(--white);
+    font-weight: 600;
+    background: var(--purple2);
+    border-top: 1px solid var(--purple3);
+    border-left: 1px solid var(--purple4);
+    border-right: 1px solid var(--purple4);
+    border-bottom: 2px solid var(--purple5);
+}
+
+.CardTrain3{
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+}
+
+.CardTrain2 {
+    display: flex;
+    justify-content: space-evenly;
+    width: 90%;
+}
+
+.CardTrain5-3 {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+}
+
+.CardTrain5-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+@media screen and (min-width: 1024px) {
+    .card{
+        cursor: pointer;
+    }
+
+    .CardTrain3{
+        justify-content: center;
+        gap: 20px;
+    }
+    
+    .CardTrain2 {
+        justify-content: center;
+        gap: 20px;
+    }
+    
+    .CardTrain5-3 {
+        display: flex;
+        gap: 20px;
+    }
+    
+    .CardTrain5-2 {
+        display: flex;
+        /* gap: 20px; */
+    }
+
+    .ABCDE-title{
+        text-shadow: 0 0 11px black;
+    }
+}
