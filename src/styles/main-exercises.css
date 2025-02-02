@@ -27,6 +27,14 @@
     background: var(--card-shadow2);
     padding: 0.3em 0.8em;
     border-radius: 40px;
+    position: fixed;
+    display: block;
+    bottom: 36px;
+    /* Ajusta a distância do botão em relação ao fundo da tela */
+    right: 120px;
+    /* Ajusta a distância do botão em relação à lateral direita */
+    z-index: 1000;
+    /* Garante que o botão fique sobre outros elementos */
 }
 
 .task-list {
@@ -57,18 +65,20 @@
 
     & h2 {
         color: var(--white);
+        font-size: 0.9em;
+        padding-bottom: 0.4em;
     }
 }
 
 #checkboxes {
     display: flex;
     flex-direction: column;
-    gap: 5px;
+    gap: 0.3em;
 }
 
 .checkbox-group label {
     display: block;
-    font-size: 1em;
+    font-size: 0.8em;
     color: var(--white);
     /* Tamanho da fonte do texto das checkboxes */
 }
@@ -126,15 +136,26 @@
     display: block;
     background: var(--purple3);
     color: var(--white);
-    padding: 5px 15px;
-    border-radius: 20px;
+    font-size: 50px;
+    height: 80px;
+    width: 80px;
+    border-radius: 50%;
     border: 2px solid transparent;
-
-    &:active {
-        background: var(--purple4);
-        border: 2px solid var(--purple3);
-    }
+    position: fixed;
+    /* Torna o botão fixo na tela */
+    bottom: 30px;
+    /* Ajusta a distância do botão em relação ao fundo da tela */
+    right: 25px;
+    /* Ajusta a distância do botão em relação à lateral direita */
+    z-index: 1000;
+    /* Garante que o botão fique sobre outros elementos */
 }
+
+.next-serie-btn:active {
+    background: var(--purple4);
+    border: 2px solid var(--purple3);
+}
+
 
 @media screen and (min-width: 1024px) {
     .task-list {
@@ -144,7 +165,7 @@
         gap: 20px;
     }
 
-    .checkbox-group{
+    .checkbox-group {
         height: 100%;
     }
 
@@ -152,11 +173,18 @@
         height: 90%;
     }
 
-    body{
+    body {
         overflow-x: hidden;
     }
 
-    .next-serie-btn{
+    .next-serie-btn {
         display: none;
+    }
+
+    #timer {
+        position: relative;
+        display: block;
+        right: 0;
+        bottom: 0;
     }
 }

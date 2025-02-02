@@ -124,9 +124,9 @@ document.querySelector('.next-serie-btn').addEventListener('click', event => {
 
 
 
-
+//-----------------------------------------------------
 function editSeries(taskId) {
-    const numSeries = prompt("Quantas séries você deseja manter visíveis?", "6");
+    const numSeries = prompt("Quantas séries você deseja manter visíveis?", "4"); // Altere para 4
     const series = document.querySelectorAll(`#${taskId} input[type="checkbox"]`);
 
     const seriesCount = parseInt(numSeries, 10);
@@ -158,6 +158,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const storedSeriesCount = localStorage.getItem(`visibleSeries_${taskId}`);
         const series = task.querySelectorAll('input[type="checkbox"]');
 
+        // Se houver um valor salvo no localStorage, use-o
         if (storedSeriesCount) {
             const seriesCount = parseInt(storedSeriesCount, 10);
             series.forEach((checkbox, index) => {
@@ -170,9 +171,23 @@ document.addEventListener('DOMContentLoaded', () => {
                     checkbox.disabled = true; // Desabilita a checkbox
                 }
             });
+        } else {
+            // Caso contrário, inicialize com 4 como padrão
+            const defaultSeriesCount = 4;
+            series.forEach((checkbox, index) => {
+                if (index < defaultSeriesCount) {
+                    checkbox.parentElement.style.display = "inline"; // Mostra o label
+                    checkbox.disabled = false; // Habilita a checkbox
+                } else {
+                    checkbox.parentElement.style.display = "none"; // Oculta o label
+                    checkbox.checked = false; // Desmarca a checkbox
+                    checkbox.disabled = true; // Desabilita a checkbox
+                }
+            });
         }
     });
 });
+//-----------------------------------------------------
 
 
 
@@ -203,7 +218,7 @@ function resetExercise(taskId, originalTitle) {
 
 // Função para carregar os títulos salvos ao carregar a página
 function loadTitles() {
-    // Gera automaticamente IDs no formato 'task1', 'task2', ..., 'task56'
+    // Gera automaticamente IDs no formato 'task1', 'task2', ..., 'task60'
     const taskIds = Array.from({ length: 56 }, (_, i) => `task${i + 1}`);
 
     taskIds.forEach(taskId => {
@@ -234,3 +249,80 @@ document.querySelector('.edit-btn-main').addEventListener('click', function () {
         button.style.display = button.style.display === 'none' ? 'inline-block' : 'none';
     });
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+document.addEventListener("DOMContentLoaded", () => {
+    // IDs das 10 task-lists
+    const taskListIds = [
+        "task-list-1", "task-list-2", "task-list-3", "task-list-4", "task-list-5", 
+        "task-list-6", "task-list-7", "task-list-8", "task-list-9", "task-list-10"
+    ];
+
+    // Aplicar a configuração de visibilidade para cada task-list
+    taskListIds.forEach(taskListId => {
+        const savedCount = localStorage.getItem(`visibleTaskCount_${taskListId}`);
+        const visibleCount = savedCount ? parseInt(savedCount) : 6; // Padrão: 6 tasks
+        updateTaskVisibility(taskListId, visibleCount);
+    });
+});
+
+// Atualiza a visibilidade das tasks dentro de uma task-list específica
+function updateTaskVisibility(taskListId, count) {
+    const taskList = document.getElementById(taskListId);
+    if (!taskList) return;
+
+    const tasks = taskList.querySelectorAll(".checkbox-group");
+    tasks.forEach((task, index) => {
+        task.style.display = index < count ? "block" : "none";
+    });
+}
+
+// Função para ajustar o número de tasks visíveis em uma task-list específica
+function adjustTaskCount(taskListId) {
+    let newCount = parseInt(prompt("Insira o número de tasks visíveis (3 a 10):"));
+    if (isNaN(newCount) || newCount < 3 || newCount > 10) {
+        alert("Por favor, insira um valor válido entre 3 e 10.");
+        return;
+    }
+
+    // Salva o novo valor no LocalStorage
+    localStorage.setItem(`visibleTaskCount_${taskListId}`, newCount);
+
+    // Atualiza a visibilidade das tasks
+    updateTaskVisibility(taskListId, newCount);
+}

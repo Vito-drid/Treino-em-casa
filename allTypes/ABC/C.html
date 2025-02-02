@@ -73,11 +73,13 @@
     </nav>
 
     <main class="exercises">
-        <div id="timer">00:00:00.00</div>
-        <button class="next-serie-btn">Próxima Série</button>
+        <div class="main-container">
+            <div id="timer">00:00:00.00</div>
+            <button class="next-serie-btn"><i class="fa-solid fa-clock-rotate-left"></i></button>
+        </div>
         <div class="container">
-            <div class="task-list">
-                <div class="checkbox-group" id="task13">
+            <div class="task-list" id="task-list-5">
+                <div class="checkbox-group" id="task21">
                     <h2>Suposto front lever (4x4)</h2>
                     <div id="checkboxes">
                         <label><input type="checkbox" disabled> 1</label>
@@ -88,21 +90,20 @@
                         <label><input type="checkbox" disabled> 6</label>
                     </div>
                     <div class="edit-btns">
-                        <button class="all-btn-edit" style="display:none;"
-                            onclick="editExercise('task13', 'Suposto front lever (4x4)')"><i class="fa-solid fa-pen"></i>
+                        <button class="all-btn-edit" style="display:none;" onclick="editExercise('task21', 'Suposto front lever (4x4)')">
+                            <i class="fa-solid fa-pen"></i>
                         </button>
-                        <button class="all-btn-edit" style="display: none;" onclick="editSeries('task13')"><i
-                                class="fa-solid fa-gears"></i>
+                        <button class="all-btn-edit" style="display: none;" onclick="editSeries('task21')">
+                            <i class="fa-solid fa-gears"></i>
                         </button>
-                        <button class="all-btn-edit" style="display:none;"
-                            onclick="resetExercise('task13', 'Suposto front lever (4x4)')"><i
-                                class="fa-solid fa-arrow-rotate-left"></i>
+                        <button class="all-btn-edit" style="display:none;" onclick="resetExercise('task21', 'Suposto front lever (4x4)')">
+                            <i class="fa-solid fa-arrow-rotate-left"></i>
                         </button>
                     </div>
-                    <p class="taskId-edit" style="display: none;">Id: task13</p>
+                    <p class="taskId-edit" style="display: none;">Id: task21</p>
                 </div>
-
-                <div class="checkbox-group" id="task14">
+            
+                <div class="checkbox-group" id="task22">
                     <h2>Front lever dobrado (4x4)</h2>
                     <div id="checkboxes">
                         <label><input type="checkbox" disabled> 1</label>
@@ -113,21 +114,20 @@
                         <label><input type="checkbox" disabled> 6</label>
                     </div>
                     <div class="edit-btns">
-                        <button class="all-btn-edit" style="display:none;"
-                            onclick="editExercise('task14', 'Front lever dobrado (4x4)')"><i class="fa-solid fa-pen"></i>
+                        <button class="all-btn-edit" style="display:none;" onclick="editExercise('task22', 'Front lever dobrado (4x4)')">
+                            <i class="fa-solid fa-pen"></i>
                         </button>
-                        <button class="all-btn-edit" style="display: none;" onclick="editSeries('task14')"><i
-                                class="fa-solid fa-gears"></i>
+                        <button class="all-btn-edit" style="display: none;" onclick="editSeries('task22')">
+                            <i class="fa-solid fa-gears"></i>
                         </button>
-                        <button class="all-btn-edit" style="display:none;"
-                            onclick="resetExercise('task14', 'Front lever dobrado (4x4)')"><i
-                                class="fa-solid fa-arrow-rotate-left"></i>
+                        <button class="all-btn-edit" style="display:none;" onclick="resetExercise('task22', 'Front lever dobrado (4x4)')">
+                            <i class="fa-solid fa-arrow-rotate-left"></i>
                         </button>
                     </div>
-                    <p class="taskId-edit" style="display: none;">Id: task14</p>
+                    <p class="taskId-edit" style="display: none;">Id: task22</p>
                 </div>
-
-                <div class="checkbox-group" id="task15">
+            
+                <div class="checkbox-group" id="task23">
                     <h2>Prancha (4xMax)</h2>
                     <div id="checkboxes">
                         <label><input type="checkbox" disabled> 1</label>
@@ -138,46 +138,44 @@
                         <label><input type="checkbox" disabled> 6</label>
                     </div>
                     <div class="edit-btns">
-                        <button class="all-btn-edit" style="display:none;"
-                            onclick="editExercise('task15', 'Prancha (4xMax)')"><i class="fa-solid fa-pen"></i>
+                        <button class="all-btn-edit" style="display:none;" onclick="editExercise('task23', 'Prancha (4xMax)')">
+                            <i class="fa-solid fa-pen"></i>
                         </button>
-                        <button class="all-btn-edit" style="display: none;" onclick="editSeries('task15')"><i
-                                class="fa-solid fa-gears"></i>
+                        <button class="all-btn-edit" style="display: none;" onclick="editSeries('task23')">
+                            <i class="fa-solid fa-gears"></i>
                         </button>
-                        <button class="all-btn-edit" style="display:none;"
-                            onclick="resetExercise('task15', 'Prancha (4xMax)')"><i
-                                class="fa-solid fa-arrow-rotate-left"></i>
+                        <button class="all-btn-edit" style="display:none;" onclick="resetExercise('task23', 'Prancha (4xMax)')">
+                            <i class="fa-solid fa-arrow-rotate-left"></i>
                         </button>
                     </div>
-                    <p class="taskId-edit" style="display: none;">Id: task15</p>
+                    <p class="taskId-edit" style="display: none;">Id: task23</p>
                 </div>
-
-                <div class="checkbox-group" id="task16">
+            
+                <div class="checkbox-group" id="task24">
                     <h2>Abdominal em V (4xMax)</h2>
                     <div id="checkboxes">
                         <label><input type="checkbox" disabled> 1</label>
                         <label><input type="checkbox" disabled> 2</label>
-                        <label><input type="checkbox" disabled> 3 </label>
+                        <label><input type="checkbox" disabled> 3</label>
                         <label><input type="checkbox" disabled> 4</label>
                         <label><input type="checkbox" disabled> 5</label>
                         <label><input type="checkbox" disabled> 6</label>
                     </div>
                     <div class="edit-btns">
-                        <button class="all-btn-edit" style="display:none;"
-                            onclick="editExercise('task16', 'Abdominal em V (4xMax)')"><i class="fa-solid fa-pen"></i>
+                        <button class="all-btn-edit" style="display:none;" onclick="editExercise('task24', 'Abdominal em V (4xMax)')">
+                            <i class="fa-solid fa-pen"></i>
                         </button>
-                        <button class="all-btn-edit" style="display: none;" onclick="editSeries('task16')"><i
-                                class="fa-solid fa-gears"></i>
+                        <button class="all-btn-edit" style="display: none;" onclick="editSeries('task24')">
+                            <i class="fa-solid fa-gears"></i>
                         </button>
-                        <button class="all-btn-edit" style="display:none;"
-                            onclick="resetExercise('task16', 'Abdominal em V (4xMax)')"><i
-                                class="fa-solid fa-arrow-rotate-left"></i>
+                        <button class="all-btn-edit" style="display:none;" onclick="resetExercise('task24', 'Abdominal em V (4xMax)')">
+                            <i class="fa-solid fa-arrow-rotate-left"></i>
                         </button>
                     </div>
-                    <p class="taskId-edit" style="display: none;">Id: task16</p>
+                    <p class="taskId-edit" style="display: none;">Id: task24</p>
                 </div>
-
-                <div class="checkbox-group" id="task17">
+            
+                <div class="checkbox-group" id="task25">
                     <h2>Montanha abdominal (3x35)</h2>
                     <div id="checkboxes">
                         <label><input type="checkbox" disabled> 1</label>
@@ -188,21 +186,20 @@
                         <label><input type="checkbox" disabled> 6</label>
                     </div>
                     <div class="edit-btns">
-                        <button class="all-btn-edit" style="display:none;"
-                            onclick="editExercise('task17', 'Montanha abdominal (3x35)')"><i class="fa-solid fa-pen"></i>
+                        <button class="all-btn-edit" style="display:none;" onclick="editExercise('task25', 'Montanha abdominal (3x35)')">
+                            <i class="fa-solid fa-pen"></i>
                         </button>
-                        <button class="all-btn-edit" style="display: none;" onclick="editSeries('task17')"><i
-                                class="fa-solid fa-gears"></i>
+                        <button class="all-btn-edit" style="display: none;" onclick="editSeries('task25')">
+                            <i class="fa-solid fa-gears"></i>
                         </button>
-                        <button class="all-btn-edit" style="display:none;"
-                            onclick="resetExercise('task17', 'Montanha abdominal (3x35)')"><i
-                                class="fa-solid fa-arrow-rotate-left"></i>
+                        <button class="all-btn-edit" style="display:none;" onclick="resetExercise('task25', 'Montanha abdominal (3x35)')">
+                            <i class="fa-solid fa-arrow-rotate-left"></i>
                         </button>
                     </div>
-                    <p class="taskId-edit" style="display: none;">Id: task17</p>
+                    <p class="taskId-edit" style="display: none;">Id: task25</p>
                 </div>
-
-                <div class="checkbox-group" id="task18">
+            
+                <div class="checkbox-group" id="task26">
                     <h2>Panturrilha (3x35)</h2>
                     <div id="checkboxes">
                         <label><input type="checkbox" disabled> 1</label>
@@ -213,21 +210,20 @@
                         <label><input type="checkbox" disabled> 6</label>
                     </div>
                     <div class="edit-btns">
-                        <button class="all-btn-edit" style="display:none;"
-                            onclick="editExercise('task18', 'Panturrilha (3x35)')"><i class="fa-solid fa-pen"></i>
+                        <button class="all-btn-edit" style="display:none;" onclick="editExercise('task26', 'Panturrilha (3x35)')">
+                            <i class="fa-solid fa-pen"></i>
                         </button>
-                        <button class="all-btn-edit" style="display: none;" onclick="editSeries('task18')"><i
-                                class="fa-solid fa-gears"></i>
+                        <button class="all-btn-edit" style="display: none;" onclick="editSeries('task26')">
+                            <i class="fa-solid fa-gears"></i>
                         </button>
-                        <button class="all-btn-edit" style="display:none;"
-                            onclick="resetExercise('task18', 'Panturrilha (3x35)')"><i
-                                class="fa-solid fa-arrow-rotate-left"></i>
+                        <button class="all-btn-edit" style="display:none;" onclick="resetExercise('task26', 'Panturrilha (3x35)')">
+                            <i class="fa-solid fa-arrow-rotate-left"></i>
                         </button>
                     </div>
-                    <p class="taskId-edit" style="display: none;">Id: task18</p>
+                    <p class="taskId-edit" style="display: none;">Id: task26</p>
                 </div>
-
-                <div class="checkbox-group" id="task19">
+            
+                <div class="checkbox-group" id="task27">
                     <h2>Agachamento (3x10)</h2>
                     <div id="checkboxes">
                         <label><input type="checkbox" disabled> 1</label>
@@ -238,20 +234,94 @@
                         <label><input type="checkbox" disabled> 6</label>
                     </div>
                     <div class="edit-btns">
-                        <button class="all-btn-edit" style="display:none;"
-                            onclick="editExercise('task19', 'Agachamento (3x10)')"><i class="fa-solid fa-pen"></i>
+                        <button class="all-btn-edit" style="display:none;" onclick="editExercise('task27', 'Agachamento (3x10)')">
+                            <i class="fa-solid fa-pen"></i>
                         </button>
-                        <button class="all-btn-edit" style="display: none;" onclick="editSeries('task19')"><i
-                                class="fa-solid fa-gears"></i>
+                        <button class="all-btn-edit" style="display: none;" onclick="editSeries('task27')">
+                            <i class="fa-solid fa-gears"></i>
                         </button>
-                        <button class="all-btn-edit" style="display:none;"
-                            onclick="resetExercise('task19', ' Agachamento (3x10)')"><i
-                                class="fa-solid fa-arrow-rotate-left"></i>
+                        <button class="all-btn-edit" style="display:none;" onclick="resetExercise('task27', 'Agachamento (3x10)')">
+                            <i class="fa-solid fa-arrow-rotate-left"></i>
                         </button>
                     </div>
-                    <p class="taskId-edit" style="display: none;">Id: task19</p>
+                    <p class="taskId-edit" style="display: none;">Id: task27</p>
+                </div>
+            
+                <div class="checkbox-group" id="task28">
+                    <h2>New exercise (Y1 w-z)</h2>
+                    <div id="checkboxes">
+                        <label><input type="checkbox" disabled> 1</label>
+                        <label><input type="checkbox" disabled> 2</label>
+                        <label><input type="checkbox" disabled> 3</label>
+                        <label><input type="checkbox" disabled> 4</label>
+                        <label><input type="checkbox" disabled> 5</label>
+                        <label><input type="checkbox" disabled> 6</label>
+                    </div>
+                    <div class="edit-btns">
+                        <button class="all-btn-edit" style="display:none;" onclick="editExercise('task28', 'New exercise (Y1 w-z)')">
+                            <i class="fa-solid fa-pen"></i>
+                        </button>
+                        <button class="all-btn-edit" style="display: none;" onclick="editSeries('task28')">
+                            <i class="fa-solid fa-gears"></i>
+                        </button>
+                        <button class="all-btn-edit" style="display:none;" onclick="resetExercise('task28', 'New exercise (Y1 w-z)')">
+                            <i class="fa-solid fa-arrow-rotate-left"></i>
+                        </button>
+                    </div>
+                    <p class="taskId-edit" style="display: none;">Id: task28</p>
+                </div>
+            
+                <div class="checkbox-group" id="task29">
+                    <h2>New exercise (Y2 w-z)</h2>
+                    <div id="checkboxes">
+                        <label><input type="checkbox" disabled> 1</label>
+                        <label><input type="checkbox" disabled> 2</label>
+                        <label><input type="checkbox" disabled> 3</label>
+                        <label><input type="checkbox" disabled> 4</label>
+                        <label><input type="checkbox" disabled> 5</label>
+                        <label><input type="checkbox" disabled> 6</label>
+                    </div>
+                    <div class="edit-btns">
+                        <button class="all-btn-edit" style="display:none;" onclick="editExercise('task29', 'New exercise (Y2 w-z)')">
+                            <i class="fa-solid fa-pen"></i>
+                        </button>
+                        <button class="all-btn-edit" style="display: none;" onclick="editSeries('task29')">
+                            <i class="fa-solid fa-gears"></i>
+                        </button>
+                        <button class="all-btn-edit" style="display:none;" onclick="resetExercise('task29', 'New exercise (Y2 w-z)')">
+                            <i class="fa-solid fa-arrow-rotate-left"></i>
+                        </button>
+                    </div>
+                    <p class="taskId-edit" style="display: none;">Id: task29</p>
+                </div>
+            
+                <div class="checkbox-group" id="task30">
+                    <h2>New exercise (Y3 w-z)</h2>
+                    <div id="checkboxes">
+                        <label><input type="checkbox" disabled> 1</label>
+                        <label><input type="checkbox" disabled> 2</label>
+                        <label><input type="checkbox" disabled> 3</label>
+                        <label><input type="checkbox" disabled> 4</label>
+                        <label><input type="checkbox" disabled> 5</label>
+                        <label><input type="checkbox" disabled> 6</label>
+                    </div>
+                    <div class="edit-btns">
+                        <button class="all-btn-edit" style="display:none;" onclick="editExercise('task30', 'New exercise (Y3 w-z)')">
+                            <i class="fa-solid fa-pen"></i>
+                        </button>
+                        <button class="all-btn-edit" style="display: none;" onclick="editSeries('task30')">
+                            <i class="fa-solid fa-gears"></i>
+                        </button>
+                        <button class="all-btn-edit" style="display:none;" onclick="resetExercise('task30', 'New exercise (Y3 w-z)')">
+                            <i class="fa-solid fa-arrow-rotate-left"></i>
+                        </button>
+                    </div>
+                    <p class="taskId-edit" style="display: none;">Id: task30</p>
                 </div>
             </div>
+            
+            <button class="all-btn-edit" style="display:none;" onclick="adjustTaskCount('task-list-5')">Ajustar Tasks
+                Lista 5</button>
         </div>
     </main>
 
